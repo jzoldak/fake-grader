@@ -1,5 +1,7 @@
 require 'sinatra'
+require 'json'
 
-get '/' do
-  "Hello, world"
+post '/' do
+    content_type :json
+    { :correct => true, :score => 1, :msg => "<p>Great! You got the right answer!</p>" }.to_json
 end
